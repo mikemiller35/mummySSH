@@ -1,9 +1,8 @@
 package main
 
 import (
-		"io/ioutil"
-		"errors"
-		"net"
+		"log"
+		"os"
 		"golang.org/x/crypto/ssh"
 		"github.com/helloyi/go-sshclient"
        )
@@ -12,13 +11,15 @@ func main() {
 	//Need to get the following values from my https request
 	client, err := sshclient.DialWithKey("host:port", "username", "pem")
 		if err != nil {
-			handleErr(err)
+			l := log.New(os.Stderr, "", 0)
+			log.Fatal(err)
 		}
 	defer client.Close()
 
 		// default terminal
 		if err := client.Terminal(nil).Start(); err != nil {
-			handleErr(err)
+			l := log.New(os.Stderr, "", 0)
+			log.Fatal(err)
 		}
 
 	// terminal config
@@ -32,6 +33,6 @@ Term: "xterm",
 	      },
 	}
 	if err := client.Terminal(config).Start(); err != nil {
-		handleErr(err)
+		log.Fatal(err)
 	}
 }
