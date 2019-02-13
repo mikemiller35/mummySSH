@@ -10,17 +10,22 @@ This is a work in progress...
 
 
 src/github.com/helloyi/go-sshclient is a fork of https://github.com/helloyi/go-sshclient/ That I've modded
-
+I would also do a `go get golang.org/x/crypto/ssh`
 
 
 
 
 
 ```
+├── README.md
 └── src
     └── github.com
         ├── helloyi
         │   └── go-sshclient
+        │       └── sshclient.go
         └── mmillerlevels
+            ├── getMe
+            │   └── getme.go
             └── mummySSH
+                └── main.go
 ```
