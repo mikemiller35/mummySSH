@@ -5,7 +5,7 @@ My Custom Go SSH Client
 Need something that can chat with Vault for 
 connecting into remote servers, specifically in AWS.
 
-This is a work in progress...
+This is a work in progress...Including this readme, needs some love.
 
 
 
